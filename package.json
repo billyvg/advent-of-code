@@ -16,6 +16,9 @@
     "eslint": "^6.7.2",
     "prettier": "^1.19.1"
   },
+  "scripts": {
+    "test": "yarn jest"
+  },
   "volta": {
     "node": "13.2.0",
     "yarn": "1.19.2"
