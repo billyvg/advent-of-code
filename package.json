@@ -1,0 +1,23 @@
+{
+  "name": "aoc2019",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "advent of code 2019",
+  "main": "index.js",
+  "author": "billy@mmo.me",
+  "license": "MIT",
+  "dependencies": {
+    "jest": "^24.9.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "babel-jest": "^24.9.0",
+    "eslint": "^6.7.2",
+    "prettier": "^1.19.1"
+  },
+  "volta": {
+    "node": "13.2.0",
+    "yarn": "1.19.2"
+  }
+}
