@@ -10,7 +10,6 @@ export function parser(opcodeString) {
     }
 
     let [a, b, c, d] = opcodes.slice(index, index + 4);
-    console.log(index, a);
 
     if (a === 1) {
       opcodes[d] = opcodes[b] + opcodes[c];
