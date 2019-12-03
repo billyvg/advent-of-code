@@ -18,15 +18,19 @@ async function main() {
     process.exit(1);
   }
 
-  const content = await readFile(resolve(__dirname, day, "./input"));
-  const input = content.toString().trim();
+  try {
+    const content = await readFile(resolve(__dirname, day, "./input"));
+    const input = content.toString().trim();
 
-  const module = await import(resolve(__dirname, day, "index.js"));
+    const module = await import(resolve(__dirname, day, "index.js"));
 
-  console.log(`Running solution for day ${day}`);
+    console.log(`Running solution for day ${day}`);
 
-  const value = await module.default(input);
-  console.log(value);
+    const value = await module.default(input);
+    console.log(value);
+  } catch (err) {
+    console.error(err);
+  }
 }
 
 main();
