@@ -13,7 +13,7 @@ function parsePath(path) {
 
 export function plotWire(wire, callback) {
   wire.reduce(
-    (lastPoint, wirePath) => {
+    ([lastPoint, iteration], wirePath) => {
       const [axis, direction, length] = parsePath(wirePath);
       const [initialX, initialY] = lastPoint;
 
@@ -30,11 +30,11 @@ export function plotWire(wire, callback) {
               ? [initialX + i * direction + direction, initialY]
               : [initialX, initialY + i * direction + direction];
 
-          callback(...coordinates);
+          callback(...[...coordinates, iteration + i + 1]);
         });
 
-      return endingPoint;
+      return [endingPoint, iteration + length];
     },
-    [0, 0]
+    [[0, 0], 0]
   );
 }
