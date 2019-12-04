@@ -18,10 +18,16 @@ async function main() {
     process.exit(1);
   }
 
+  let input;
+
   try {
     const content = await readFile(resolve(__dirname, day, "./input"));
-    const input = content.toString().trim();
+    input = content.toString().trim();
+  } catch (_err) {
+    input = null;
+  }
 
+  try {
     const module = await import(resolve(__dirname, day, "index.js"));
 
     console.log(`Running solution for day ${day}`);
